@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Exercise 3</title>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Use Boostrap lib -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"></script> -->
+
+</head>
+<body>
+    <div class="content_wrapper">
+        <section class="content_header">
+            <h1> Data Tables
+                <small>advanced tables</small>
+            </h1>
+        </section>
+        <section class="content">
+            <div class="row">
+                <div class="col">
+                    <div class="box">
+                        <div class="box_header">
+                            <h3 class="box_title">Hover Data Table</h3>
+                        </div>
+                        <div class="features">
+                            <div class="data_table_length">
+                                <label>Show
+                                    <select name="example2_length" aria-controls="example2" class="form_control input_sm">
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                    </select> entries
+                                </label>
+                            </div>
+                            <div class="box_filter">
+                                <label>
+                                    Search:
+                                    <input type="search" class="form_control input_sm" placeholder="Search" aria-controls="example2">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="box_body">
+                            <div class="data_tables_wrapper">
+                                <div class="row">
+                                    <div class="col_sm">
+                                        <table id="table_main" class="table table-striped table-bordered hover" style="width:100%">
+                                            <thead>
+                                                <tr role="row">
+                                                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" data-column="0" aria-label="Rendering engine: activate to sort column descending">Rendering engine</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" data-column="1" aria-label="Browser: activate to sort column ascending">Browser</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" data-column="2" aria-label="Platform(s): activate to sort column ascending">Platform(s)</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" data-column="3" aria-label="Engine version: activate to sort column ascending">Engine version</th>
+                                                    <th class="sorting" rowspan="1" colspan="1" data-column="4">CSS grade</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <th rowspan="1" colspan="1">Rendering engine</th>
+                                                    <th rowspan="1" colspan="1">Browser</th>
+                                                    <th rowspan="1" colspan="1">Platform(s)</th>
+                                                    <th rowspan="1" colspan="1">Engine version</th>
+                                                    <th rowspan="1" colspan="1">CSS grade</th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col_sm-5">
+                                        <div class="data_tables_infor" id="table_main_info" role="status"
+                                        aria-live="polite"></div>
+                                    </div>
+                                    <div class="col_sm-7">
+                                        <div class="data_tables_paginate" id="paginate">
+                                            <ul class="pagination">
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
