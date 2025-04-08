@@ -1,133 +1,142 @@
-$(document).ready(function () {
-    let pageNumber = 0;
-    let recordsLength = 0;
-
-    const dataFile = "data.json";
-    let totalRecords = 0;
-
-    $.getJSON(dataFile, function (data) {  
-        const tableBody = $("#table_main tbody");
-        tableBody.empty();
-        $.each(data, function (index, item) {
-            const row = $("<tr></tr>");
-            row.append($("<td></td>").text(item.engine));
-            row.append($("<td></td>").text(item.browser));
-            row.append($("<td></td>").text(item.platform));
-            row.append($("<td></td>").text(item.version));
-            row.append($("<td></td>").text(item.grade));
-            tableBody.append(row);
-        });
-        totalRecords = $("#table_main tbody tr").length;
-        updateTable();
-        updateButtonPagination();
-        updatePagination();
-    });
-    
-    const calPageNumber = () => {
-        recordsLength = $('select[name="example2_length"]').val();
-        return Math.ceil(totalRecords / recordsLength);
-    }
-    
-    const updateTable = () => {
-        recordsLength = $('select[name="example2_length"]').val();
-        pageNumber = Math.min(pageNumber, calPageNumber() - 1); 
-        let startRecord = ((pageNumber* recordsLength + 1) > totalRecords) ? 0 : (pageNumber * recordsLength + 1);
-        
-        $("#table_main tbody tr").hide();
-        $("#table_main tbody tr").slice(pageNumber * recordsLength, (pageNumber + 1) * recordsLength).show();
-        $("#table_main_info").text(`Showing ${startRecord} to ${Math.min((pageNumber + 1) * recordsLength, totalRecords)} of ${totalRecords} entries`);
-    }
-
-    const updateButtonPagination = () => {
-        $("#table_main_previous").prop("disabled", pageNumber === 0);
-        $("#table_main_next").prop("disabled", pageNumber === calPageNumber() - 1);
-    }
-
-    const updatePagination = () => {
-        const totalPages = calPageNumber();
-        const pagination = $("#paginate .pagination");
-        
-        pagination.empty();
-        pagination.append(`<li class="paginate_button previous" id="previous"><a href="#" aria-controls="example2" data-dt-idx="${pageNumber}" tabindex="0">Previous</a></li>`);
-
-        for (let i = 0; i < totalPages; i++) {
-            const pageItem = $('<li class="paginate_button"></li>');
-            pageItem.append(`<a href="#">${i + 1}</a>`);
-            if (i === pageNumber) {
-                pageItem.addClass('active');
-            }
-            pageItem.click(function() {
-                pageNumber = i;
-                updateTable();
-                updateButtonPagination();
-                updatePagination();
-            });
-            pagination.append(pageItem);
-        }
-        
-        pagination.append(`<li class="paginate_button next" id="next"><a href="#" aria-controls="example2" data-dt-idx="${1+calPageNumber()}">Next</a></li>`);
-
-        $("#previous").click(function() {
-            if (pageNumber > 0) {
-                pageNumber--;
-                updateTable();
-                updateButtonPagination();
-                updatePagination();
-            }
-        });
-
-        $("#next").click(function() {
-            if (pageNumber < calPageNumber() - 1) {
-                pageNumber++;
-                updateTable();
-                updateButtonPagination();
-                updatePagination();
-            }
-        });
-    }
-    $('.data_table_length').on('change', function() {
-        recordsLength = $(this).val();
-        pageNumber = 0; 
-        pageNumber = calPageNumber();
-        updateTable();
-        updateButtonPagination();
-        updatePagination();
-    });
-    $('th.sorting').on('click', function() {
-        let $th = $(this);
-        let index = $th.index(); 
-        let rows = $('table tbody tr').get(); 
-
-        let isAscending = $th.hasClass('sorting_asc');
-
-        rows.sort(function(rowA, rowB) {
-            let cellA = $(rowA).children('td').eq(index).text().trim();
-            let cellB = $(rowB).children('td').eq(index).text().trim();
-
-            if (cellA < cellB) {
-                return isAscending ? 1 : -1;
-            } else if (cellA > cellB) {
-                return isAscending ? -1 : 1;
-            } else {
-                return 0;
-            }
-        });
-
-        $.each(rows, function(index, row) {
-            $('table tbody').append(row);
-        });
-
-        $('th.sorting').removeClass('sorting_asc sorting_desc');
-        if (isAscending) {
-            $th.addClass('sorting_desc'); 
-        } else {
-            $th.addClass('sorting_asc'); 
-        }
-    });
-});
 // search()
 // sort: search, not search
 // update showing 1 to 10 of 57 entries
 // update button pagination
 // phải sort toàn bộ nội dung trong bảng, không phải sort theo từng trang
 // sort theo thứ tự tăng dần, giảm dần
+// khi loc ra thi sort trong du lieu da loc 
+$(document).ready(function () {
+    let pageNumber = 0;
+    let recordsPerPage = 10;
+    let allData = [];
+    let filteredData = [];
+
+    const dataFile = "data.json";
+
+    $.getJSON(dataFile, function (data) {
+        allData = data;
+        updateTable();
+        updatePagination();
+        updateInfo();
+    });
+
+    const getTotalPages = () => Math.ceil(allData.length / recordsPerPage);
+
+    const updateTable = () => {
+        const dataToShow = filteredData.length ? filteredData : allData;
+        const start = pageNumber * recordsPerPage;
+        const end = Math.min(start + recordsPerPage, dataToShow.length);
+        const rows = dataToShow.slice(start, end).map(item => `
+            <tr>
+                <td>${item.engine}</td>
+                <td>${item.browser}</td>
+                <td>${item.platform}</td>
+                <td>${item.version}</td>
+                <td>${item.grade}</td>
+            </tr>
+        `).join("");
+
+        $("#table_main tbody").html(rows);
+        updateInfo();
+    };
+
+    const updateInfo = () => {
+        const dataToShow = filteredData.length ? filteredData : allData;
+        const start = dataToShow.length === 0 ? 0 : (pageNumber * recordsPerPage + 1);
+        const end = Math.min((pageNumber + 1) * recordsPerPage, dataToShow.length);
+        $("#table_main_info").text(`Showing ${start} to ${end} of ${dataToShow.length} entries`);
+    };
+
+    const updatePagination = () => {
+        const dataToShow = filteredData.length ? filteredData : allData;
+        const totalPages = Math.ceil(dataToShow.length / recordsPerPage);
+        const pagination = $("#paginate .pagination");
+        pagination.empty();
+
+        const createPageButton = (label, disabled, onClick) => {
+            return $(`<li class="paginate_button ${disabled ? 'disabled' : ''}">
+                <a href="#">${label}</a>
+            </li>`).click(function (e) {
+                e.preventDefault();
+                if (!disabled) onClick();
+            });
+        };
+
+        pagination.append(createPageButton("Previous", pageNumber === 0, () => {
+            pageNumber--;
+            updateTable();
+            updatePagination();
+        }));
+
+        for (let i = 0; i < totalPages; i++) {
+            const isActive = pageNumber === i;
+            const pageBtn = $(`<li class="paginate_button ${isActive ? 'active' : ''}">
+                <a href="#">${i + 1}</a>
+            </li>`);
+            pageBtn.click(function (e) {
+                e.preventDefault();
+                pageNumber = i;
+                updateTable();
+                updatePagination();
+            });
+            pagination.append(pageBtn);
+        }
+
+        pagination.append(createPageButton("Next", pageNumber === totalPages - 1, () => {
+            pageNumber++;
+            updateTable();
+            updatePagination();
+        }));
+    };
+
+    $('select[name="example2_length"]').on('change', function () {
+        recordsPerPage = parseInt($(this).val());
+        pageNumber = 0;
+        updateTable(allData);
+        updatePagination();
+    });
+
+    $('#searchInput').on('keyup', function () {
+        const searchTerm = $(this).val().toLowerCase();
+        filteredData = allData.filter(row =>
+            Object.values(row).some(value =>
+                value.toString().toLowerCase().includes(searchTerm)
+        ));
+        pageNumber = 0;
+        updateTable();
+        updatePagination();
+    });
+
+    $('th.sorting').on('click', function () {
+        const index = $(this).index();
+        const key = ['engine', 'browser', 'platform', 'version', 'grade'][index];
+        const isAscending = $(this).hasClass('sorting_asc');
+    
+        const dataToSort = filteredData.length ? filteredData : allData;
+    
+        dataToSort.sort((a, b) => {
+            let valA = a[key];
+            let valB = b[key];
+    
+            const isNumber = !isNaN(valA) && !isNaN(valB);
+            if (isNumber) {
+                valA = parseFloat(valA);
+                valB = parseFloat(valB);
+            } else {
+                valA = valA.toString().toLowerCase();
+                valB = valB.toString().toLowerCase();
+            }
+    
+            if (valA < valB) return isAscending ? 1 : -1;
+            if (valA > valB) return isAscending ? -1 : 1;
+            return 0;
+        });
+    
+        $('th.sorting').removeClass('sorting_asc sorting_desc');
+        $(this).addClass(isAscending ? 'sorting_desc' : 'sorting_asc');
+    
+        pageNumber = 0;
+        updateTable();
+        updatePagination();
+    });    
+});
