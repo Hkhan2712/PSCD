@@ -22,12 +22,19 @@ body {
 .slider {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    height: 300px
 }
 
 .slider img {
+    position: absolute;
+    top: 0;
+    display: none;
     width: 768px;
 }
 
+.slider .active {
+    display: block;
+}
 button {
     position: absolute;
     top: 50%;
@@ -47,10 +54,8 @@ button {
 .next {
     right: 10px;
 }
-.active {
-    display: block !important;
-}
 img{
+    display: none;
     width: 768px;
 }
 .photo-credits {
