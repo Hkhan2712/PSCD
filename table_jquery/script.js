@@ -1,10 +1,3 @@
-// search()
-// sort: search, not search
-// update showing 1 to 10 of 57 entries
-// update button pagination
-// phải sort toàn bộ nội dung trong bảng, không phải sort theo từng trang
-// sort theo thứ tự tăng dần, giảm dần
-// khi loc ra thi sort trong du lieu da loc 
 $(document).ready(function () {
     let pageNumber = 0;
     let recordsPerPage = 10;
@@ -19,9 +12,7 @@ $(document).ready(function () {
         updatePagination();
         updateInfo();
     });
-
-    const getTotalPages = () => Math.ceil(allData.length / recordsPerPage);
-
+    
     const updateTable = () => {
         const dataToShow = filteredData.length ? filteredData : allData;
         const start = pageNumber * recordsPerPage;
@@ -90,11 +81,22 @@ $(document).ready(function () {
     };
 
     $('select[name="example2_length"]').on('change', function () {
-        recordsPerPage = parseInt($(this).val());
-        pageNumber = 0;
-        updateTable(allData);
+        const oldRecordsPerPage = recordsPerPage;
+        const newRecordsPerPage = parseInt($(this).val());
+    
+        const dataToShow = filteredData.length ? filteredData : allData;
+    
+        const currentRowIndex = pageNumber * oldRecordsPerPage;
+    
+        recordsPerPage = newRecordsPerPage;
+    
+        pageNumber = Math.floor(currentRowIndex / recordsPerPage);
+        
+        updateTable();
         updatePagination();
     });
+
+    
 
     $('#searchInput').on('keyup', function () {
         const searchTerm = $(this).val().toLowerCase();
