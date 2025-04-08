@@ -1,144 +1,113 @@
 $(document).ready(function () {
     let pageNumber = 0;
     let recordsPerPage = 10;
-    let allData = [];
-    let filteredData = [];
+    let allData = [], filteredData = [];
+    let currentSort = { key: null, asc: true };
 
     const dataFile = "data.json";
 
     $.getJSON(dataFile, function (data) {
-        allData = data;
+        allData = filteredData = [...data];
+        generateTableHeader(Object.keys(data[0]));
+        render();
+    });
+
+    const capitalize = s => s.charAt(0).toUpperCase() + s.slice(1);
+
+    const generateTableHeader = keys => {
+        const row = keys.map((key, i) =>
+            `<th class="sorting" data-index="${i}">${capitalize(key)}</th>`).join("");
+        $("#table_main thead tr, #table_main tfoot tr").html(row);
+    };
+
+    const render = () => {
         updateTable();
         updatePagination();
         updateInfo();
-    });
-    
-    const updateTable = () => {
-        const dataToShow = filteredData.length ? filteredData : allData;
-        const start = pageNumber * recordsPerPage;
-        const end = Math.min(start + recordsPerPage, dataToShow.length);
-        const rows = dataToShow.slice(start, end).map(item => `
-            <tr>
-                <td>${item.engine}</td>
-                <td>${item.browser}</td>
-                <td>${item.platform}</td>
-                <td>${item.version}</td>
-                <td>${item.grade}</td>
-            </tr>
-        `).join("");
+    };
 
+    const updateTable = () => {
+        const start = pageNumber * recordsPerPage;
+        const rows = filteredData.slice(start, start + recordsPerPage)
+            .map(item => `<tr>${Object.values(item).map(val => `<td>${val}</td>`).join("")}</tr>`)
+            .join("");
         $("#table_main tbody").html(rows);
-        updateInfo();
     };
 
     const updateInfo = () => {
-        const dataToShow = filteredData.length ? filteredData : allData;
-        const start = dataToShow.length === 0 ? 0 : (pageNumber * recordsPerPage + 1);
-        const end = Math.min((pageNumber + 1) * recordsPerPage, dataToShow.length);
-        $("#table_main_info").text(`Showing ${start} to ${end} of ${dataToShow.length} entries`);
+        const total = filteredData.length;
+        const start = total === 0 ? 0 : pageNumber * recordsPerPage + 1;
+        const end = Math.min(start + recordsPerPage - 1, total);
+        $("#table_main_info").text(`Showing ${start} to ${end} of ${total} entries`);
     };
 
     const updatePagination = () => {
-        const dataToShow = filteredData.length ? filteredData : allData;
-        const totalPages = Math.ceil(dataToShow.length / recordsPerPage);
-        const pagination = $("#paginate .pagination");
-        pagination.empty();
-
-        const createPageButton = (label, disabled, onClick) => {
-            return $(`<li class="paginate_button ${disabled ? 'disabled' : ''}">
-                <a href="#">${label}</a>
-            </li>`).click(function (e) {
-                e.preventDefault();
-                if (!disabled) onClick();
-            });
-        };
-
-        pagination.append(createPageButton("Previous", pageNumber === 0, () => {
-            pageNumber--;
-            updateTable();
-            updatePagination();
-        }));
-
+        const totalPages = Math.ceil(filteredData.length / recordsPerPage);
+        const pagination = $(".pagination");
+        pagination.find("li.page-number").remove();
+    
         for (let i = 0; i < totalPages; i++) {
-            const isActive = pageNumber === i;
-            const pageBtn = $(`<li class="paginate_button ${isActive ? 'active' : ''}">
-                <a href="#">${i + 1}</a>
-            </li>`);
-            pageBtn.click(function (e) {
-                e.preventDefault();
-                pageNumber = i;
-                updateTable();
-                updatePagination();
-            });
-            pagination.append(pageBtn);
+            const pageBtn = $(`
+                <li class="paginate_button page-number ${pageNumber === i ? 'active' : ''}">
+                    <a href="#">${i + 1}</a>
+                </li>`)
+                .insertBefore("#nextBtn")
+                .click(e => {
+                    e.preventDefault();
+                    pageNumber = i;
+                    render();
+                });
         }
-
-        pagination.append(createPageButton("Next", pageNumber === totalPages - 1, () => {
-            pageNumber++;
-            updateTable();
-            updatePagination();
-        }));
+    
+        $("#prevBtn").toggleClass("disabled", pageNumber === 0);
+        $("#nextBtn").toggleClass("disabled", pageNumber === totalPages - 1);
+    };
+    
+    const goToPage = dir => {
+        const totalPages = Math.ceil(filteredData.length / recordsPerPage);
+        if ((dir === -1 && pageNumber > 0) || (dir === 1 && pageNumber < totalPages - 1)) {
+            pageNumber += dir;
+            render();
+        }
     };
 
+    $("#prevBtn").click(e => { e.preventDefault(); goToPage(-1); });
+    $("#nextBtn").click(e => { e.preventDefault(); goToPage(1); });
+
     $('select[name="example2_length"]').on('change', function () {
-        const oldRecordsPerPage = recordsPerPage;
-        const newRecordsPerPage = parseInt($(this).val());
-    
-        const dataToShow = filteredData.length ? filteredData : allData;
-    
-        const currentRowIndex = pageNumber * oldRecordsPerPage;
-    
-        recordsPerPage = newRecordsPerPage;
-    
-        pageNumber = Math.floor(currentRowIndex / recordsPerPage);
-        
-        updateTable();
-        updatePagination();
+        recordsPerPage = +$(this).val();
+        pageNumber = 0;
+        render();
     });
 
-    
-
-    $('#searchInput').on('keyup', function () {
-        const searchTerm = $(this).val().toLowerCase();
+    $("#searchInput").on("keyup", function () {
+        const term = $(this).val().toLowerCase();
         filteredData = allData.filter(row =>
-            Object.values(row).some(value =>
-                value.toString().toLowerCase().includes(searchTerm)
-        ));
+            Object.values(row).some(val => val.toString().toLowerCase().includes(term))
+        );
         pageNumber = 0;
-        updateTable();
-        updatePagination();
+        render();
     });
 
-    $('th.sorting').on('click', function () {
-        const index = $(this).index();
-        const key = ['engine', 'browser', 'platform', 'version', 'grade'][index];
-        const isAscending = $(this).hasClass('sorting_asc');
-    
-        const dataToSort = filteredData.length ? filteredData : allData;
-    
-        dataToSort.sort((a, b) => {
-            let valA = a[key];
-            let valB = b[key];
-    
-            const isNumber = !isNaN(valA) && !isNaN(valB);
-            if (isNumber) {
-                valA = parseFloat(valA);
-                valB = parseFloat(valB);
-            } else {
-                valA = valA.toString().toLowerCase();
-                valB = valB.toString().toLowerCase();
-            }
-    
-            if (valA < valB) return isAscending ? 1 : -1;
-            if (valA > valB) return isAscending ? -1 : 1;
-            return 0;
-        });
-    
-        $('th.sorting').removeClass('sorting_asc sorting_desc');
-        $(this).addClass(isAscending ? 'sorting_desc' : 'sorting_asc');
-    
+    const compareValues = (key, asc = true) => (a, b) => {
+        const parse = v => isNaN(v) ? String(v).toLowerCase() : parseFloat(v);
+        const valA = parse(a[key]), valB = parse(b[key]);
+        return (valA > valB ? 1 : valA < valB ? -1 : 0) * (asc ? 1 : -1);
+    };
+
+    $("#table_main thead").on("click", "th.sorting", function () {
+        const index = $(this).data("index");
+        const key = Object.keys(allData[0])[index];
+
+        currentSort.asc = (currentSort.key === key) ? !currentSort.asc : true;
+        currentSort.key = key;
+
+        filteredData.sort(compareValues(key, currentSort.asc));
+
+        $("th.sorting").removeClass("sorting_asc sorting_desc");
+        $(this).addClass(currentSort.asc ? "sorting_asc" : "sorting_desc");
+
         pageNumber = 0;
-        updateTable();
-        updatePagination();
-    });    
+        render();
+    });
 });
