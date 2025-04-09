@@ -5,18 +5,15 @@ $(document).ready(function () {
     let currentSort = { key: null, asc: true };
 
     const dataFile = "data.json";
-
     $.getJSON(dataFile, function (data) {
         allData = filteredData = [...data];
         generateTableHeader(Object.keys(data[0]));
         render();
     });
 
-    const capitalize = s => s.charAt(0).toUpperCase() + s.slice(1);
-
     const generateTableHeader = keys => {
         const row = keys.map((key, i) =>
-            `<th class="sorting" data-index="${i}">${capitalize(key)}</th>`).join("");
+            `<th class="sorting" data-index="${i}">${key.charAt(0).toUpperCase() + key.slice(1)}</th>`).join("");
         $("#table_main thead tr, #table_main tfoot tr").html(row);
     };
 
