@@ -39,7 +39,6 @@ a, a:hover {
 }
 .navbar {
     display: flex;
-    position: absolute;
     align-items: center;
     justify-content: space-between;
     width: 100%;
@@ -62,11 +61,29 @@ nav .container {
     font-size: 1.09375rem;
     margin-right: 1rem;
 }
+.nav-item {
+    display: flex;
+    align-items: center;   
+}
 .navbar-collapse {
     display: flex;
     flex-basis: auto;
     flex-grow: 1;
     align-items: center;
+}
+.bar {
+    height: 2px;
+    width: 20px;
+    background:rgba(10, 173, 10, 1);
+    margin: 5px 0;
+}
+.collapse-btn {
+    display: none;
+    cursor: pointer;
+}
+.navbar-collapse--open {
+    display: block;
+    width: 100%;
 }
 .collapse:not(.show) {
     display: none;
@@ -90,13 +107,25 @@ nav .container {
     font-size: 0.875rem;
     font-weight: 500;
 }
+.nav-link:hover {
+    color: #0aad0a;
+}
+.pt-10 {
+    padding-top: 3rem;
+}
 .btn-primary {
     --background-color: #0aad0a;
     --border-color: #0aad0a;
 }
+.btn-primary:hover {
+    background-color: #099309;
+}
 .btn-dark {
     --background-color: #001e2b;
     --border-color: #001e2b;
+}
+.btn-dark:hover {
+    background-color: #26404b;
 }
 .btn {
     display: inline-block; 
@@ -418,6 +447,9 @@ a {
     }
 }
 @media (min-width: 768px){
+    .position-md-absolute {
+        position: absolute;
+    }
     .container {
         max-width: 720px;
     }
@@ -458,10 +490,24 @@ a {
         margin-right: 6rem;
     }
 }
+@media (max-width: 768px){
+    .navbar-collapse {
+        display: none;
+        width: 100%;
+    }
+    .navbar-nav {
+        margin-left: 0;
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+    .nav-item {
+        margin: .5rem 0 .5rem 0;
+    }
+    .collapse-btn {
+        display: block;
+    }
+}
 @media (min-width: 992px){
-    /* .offset-lg-1 {
-        margin-left: 8.3333333333%
-    } */
     .col-lg-10 {
         flex: 0 0 auto;
         width: 83.333333333%;
@@ -530,6 +576,9 @@ a {
     .mx-lg-6 {
         margin-left: 1.5rem;
         margin-right: 1.5rem;
+    }
+    .pt-lg-16 {
+        padding-top: 8rem;
     }
 }
 @media (min-width: 1200px){
