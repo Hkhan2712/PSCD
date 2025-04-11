@@ -1,11 +1,8 @@
 const nav = document.querySelector(".navbar-collapse");
 const collapseBtn = document.querySelector(".collapse-btn");
 
-// collapseBtn.addEventListener("click", () => {
-//     nav.classList.remove("navbar-collapse");
-//     nav.classList.add("navbar-collapse--open");
-// });
-collapseBtn.addEventListener("click", () => {
+collapseBtn.addEventListener("click", function () {
     nav.classList.toggle("navbar-collapse--open");
-  });
+    collapseBtn.classList.toggle("collapse-btn--open")
+});
   
