@@ -1,3 +1,329 @@
 .s-me-5 {
     margin-right: 1.25rem !important;
 }
+.btn-primary {
+    background-color: #0aad0a;
+    border-color: #0aad0a;
+    color: #fff;
+}
+.btn-primary:hover {
+    background-color: #099309;
+    border-color:#0aad0a;
+}
+.btn-primary:active {
+    background-color: #0aad0a;
+}
+.py-14 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+.px-8 {
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+.mt-8 {
+    margin-top: 2rem;
+}
+.hero-slider {
+    position: relative;
+}
+.hero-slider .slick-dots {
+    position: absolute;
+    bottom: 24px;
+    display: block;
+}
+.hero-slider .slick-dots {
+    position: absolute;
+    bottom: 24px;
+    display: block;
+}
+
+.slick-dots li, .slick-dots li button {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.hero-slider .slick-dots li button:before {
+    font-size: .5rem;
+    color: var(--fc-gray-800);
+}
+.slick-dots li.slick-active button:before {
+    opacity: .75;
+    color: #000;
+}
+.slick-dots {
+    display: flex;
+    position: absolute;
+    bottom: -25px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+}
+.slick-dots li button:before {
+    font-family: slick;
+    font-size: 6px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    content: "•";
+    text-align: center;
+    opacity: .25;
+    color: #000;
+}
+.my-8 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.slick-list, .slick-slider {
+    position: relative;
+    display: block;
+}
+.slick-slider {
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.slick-slider .slick-prev {
+    margin-top: -38px;
+    margin-left: -40px;
+}
+.slick-slider .slick-prev {
+    margin-top: -38px;
+    margin-left: -40px;
+}
+.slick-slider .slick-next, .slick-slider .slick-prev {
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    left: 97%;
+    display: block;
+    padding: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 24px;
+    height: 32px;
+    width: 32px;
+    display: inline-flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--fc-gray-200);
+    border: 1px solid var(--fc-gray-200);
+    border-radius: 50px;
+    color: var(--fc-gray-500);
+    transition: .3s ease-in-out;
+}
+.slick-slider .slick-next, .slick-slider .slick-prev {
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    left: 97%;
+    display: block;
+    padding: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 24px;
+    height: 32px;
+    width: 32px;
+    display: inline-flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--fc-gray-200);
+    border: 1px solid var(--fc-gray-200);
+    border-radius: 50px;
+    color: var(--fc-gray-500);
+    transition: .3s ease-in-out;
+}
+.slick-prev {
+    left: -25px;
+}
+.slick-next {
+    right: -25px;
+}
+.slick-next, .slick-next:focus, .slick-next:hover, .slick-prev, .slick-prev:focus, .slick-prev:hover {
+    color: transparent;
+    outline: none;
+    background: transparent;
+}
+.slick-next, .slick-prev {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+    border: none;
+}
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+.mb-3 {
+    margin-bottom: .75rem;
+}
+.mb-6 {
+    margin-bottom: 1.5rem;
+}
+.card-product:hover {
+    box-shadow: 0 5px 12px rgba(0, 0, 0, .12);
+    border: 1px solix #0aad0a;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 0 8px 0 8x;
+    align-items: center;
+}
+.card img {
+    display: inline-block;
+}
+.text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.fw-bold {
+    font-weight: 700;
+}
+.mb-1 {
+    margin-bottom: .25rem;
+}
+.mb-4 {
+    margin-bottom: 1rem;
+}
+.py-10 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+.px-8 {
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+.pt-8 {
+    padding-top: 2rem;
+}
+.font-color--black {
+    color: black;
+}
+.px-6 {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+.list-inline-item {
+    display: inline-block;
+}
+/* Start */
+.deals-countdown .countdown-section {
+    position: relative;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 1;
+    padding: 14px 5px 26px;
+    margin-left: 3px;
+    margin-right: 3px;
+    border-radius: 8px;
+    border: 1px solid #dfe2e1;
+}
+.deals-countdown .countdown-section .countdown-period {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    bottom: 10px;
+    display: block;
+    color: var(--fc-gray-500);
+    width: 100%;
+    text-transform: capitalize;
+}
+.deals-countdown .countdown-section .countdown-amount {
+    display: inline-block;
+    color: #001e2b;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 15px;
+    width: 45px;
+    height: 45px;
+    line-height: 50px;
+    max-width: 100%;
+}
+.footer {
+    background-color: #f0f3f2;
+    padding: 4rem 0;
+}
+.footer .nav .nav-item .nav-link {
+    color: #5c6c75;
+    padding: 0;
+}
+.nav-link {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+.list-inline-item:not(:last-child) {
+    margin-right: .5rem;
+}
+.text-dark {
+    color: rgba(0, 30, 43, 1);
+}
+.btn-float-button {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+.fs-5 {
+    font-size: 1.09375rem;
+}
+.m-5 {
+    margin: 1.25rem;
+}
+@media (min-width: 768px) {
+    .mb-md-0 {
+        margin-bottom: 0;
+    }
+}
+@media (min-width: 992px) {
+    .ps-lg-12 {
+        padding-left: 4rem;
+    }
+    .py-lg-16 {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+    .mb-lg-10 {
+        margin-bottom: 3rem;
+    }
+    .mt-lg-14 {
+        margin-top: 5rem;
+    }
+    .mb-lg-4 {
+        margin-bottom: 1rem;
+    }
+    .my-lg-14 {
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+    }
+    .text-lg-end {
+        text-align: right;
+    }
+}
+@media (min-width: 1200px) {
+    .px-xl-8 {
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+}
