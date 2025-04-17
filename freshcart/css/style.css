@@ -180,15 +180,22 @@
 .mb-6 {
     margin-bottom: 1.5rem;
 }
-.card-product:hover {
-    box-shadow: 0 5px 12px rgba(0, 0, 0, .12);
-    border: 1px solix #0aad0a;
-}
 .card {
     display: flex;
     flex-direction: column;
     padding: 0 8px 0 8x;
     align-items: center;
+}
+.card-body {
+    padding: 1rem;
+}
+.card-product:hover {
+    box-shadow: 0 5px 12px rgba(0, 0, 0, .12);
+    border: 1px solid #0aad0a;
+    transition: .2s;
+    -moz-transition: .2s;
+    -webkit-transition: .2s;
+    -o-transition: .2s;
 }
 .card img {
     display: inline-block;
@@ -291,6 +298,53 @@
 .m-5 {
     margin: 1.25rem;
 }
+.btn.show, .btn:first-child:active {
+    color: #fff;
+    background-color: #0aad0a;
+    border-color: #0aad0a;
+}
+.nav-link:active {
+    color: #0aad0a;
+}
+.nav-link {
+    padding: 0.5rem 0;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color:#21313c;
+    line-height: 1.8;
+}
+.dropdown-item {
+    color: #5c6c75;
+}
+.border-radius {
+    border-radius: 0.5rem;
+}
+.carousel-item {
+    position: relative;
+}
+.carousel-item .overlay-content {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+.carousel-indicators{
+     
+}
+.carousel-indicators .active {
+    background-color: rgba(0, 0, 0, 0.9); /* 👉 Màu active đậm hơn */
+}
+
+@media (min-width: 552px) {
+    .m-flex-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+}
 @media (min-width: 768px) {
     .mb-md-0 {
         margin-bottom: 0;
@@ -320,10 +374,16 @@
     .text-lg-end {
         text-align: right;
     }
+    .m-flex-row {
+        flex-direction: row;
+    }
 }
 @media (min-width: 1200px) {
     .px-xl-8 {
         padding-right: 2rem;
         padding-left: 2rem;
+    }
+    .display-5 {
+        font-size: 3rem;
     }
 }
