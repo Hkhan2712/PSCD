@@ -51,4 +51,9 @@ body {
 h1 {
 	color: rgb(24, 29, 37);
 }
-
+.fs-sm {
+	font-size: .875rem;
+}
+.rounded-0 {
+	border-radius: 0 !important;
+}
