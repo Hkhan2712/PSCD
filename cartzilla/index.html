@@ -17,12 +17,290 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
+<body class="p-0">
     <header class="px-0 navbar navbar-expand-lg navbar-light sticky-top bg-light">
         <div class="flex-nowrap container">
-            <button aria-controls="navbarNav" type="button" aria-label="Toggle navigation" class="me-4 me-lg-0 navbar-toggler collapsed" style="border: 0">
+            <button aria-controls="navbarNav" type="button" aria-label="Toggle navigation" class="me-md-4 me-lg-0 navbar-toggler collapsed" style="border: 0" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="offcanvas offcanvas-start d-lg-none m-offcanvas" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasMenuLabel">Browse Cartzilla</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="close"></button>
+                </div>
+                <div class="navbar align-items-start pt-3 pb-4 py-lg-0 mx-lg-auto offcanvas-body">
+                    <ul class="position-relative w-100 navbar-nav gap-2">
+                        <li class="nav-item py-lg-2 me-lg-n1 me-xl-0 dropdown">
+                            <a aria-expanded="false" role="button" class="with-focus nav-link active border-0 d-flex justify-content-between" style="padding-left: 1.125rem; padding-right: 1.125rem" tabindex="0" data-bs-toggle="dropdown" aria-expanded="false">
+                                Home
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                                    <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/>
+                                </svg>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="hover-effect-opacity px-2 mx-n2">
+                                    <a href="" class="d-block mb-0 dropdown-item" style="line-height: 21px;">
+                                        <span class="fw-medium">Electronics Store</span>
+                                        <span class="d-block fs-xs text-body-secondary">Megamenu + Hero slider</span>
+                                    </a>
+                                </li>
+                                <li class="hover-effect-opacity px-2 mx-n2">
+                                    <a href="" class="d-block mb-0 dropdown-item" style="line-height: 21px;">
+                                        <span class="fw-medium">Fashion Store v.1</span>
+                                        <span class="d-block fs-xs text-body-secondary">Hero promo slider</span>
+                                    </a>
+                                </li>
+                                <li class="hover-effect-opacity px-2 mx-n2">
+                                    <a href="" class="d-block mb-0 dropdown-item" style="line-height: 21px;">
+                                        <span class="fw-medium">Fashion Store v.2</span>
+                                        <span class="d-block fs-xs text-body-secondary">Hero banner with hotspots</span>
+                                    </a>
+                                </li>
+                                <li class="hover-effect-opacity px-2 mx-n2">
+                                    <a href="" class="d-block mb-0 dropdown-item" style="line-height: 21px;">
+                                        <span class="fw-medium">Furniture Store</span>
+                                        <span class="d-block fs-xs text-body-secondary">Fancy product carousel</span>
+                                    </a>
+                                </li>
+                                <li class="hover-effect-opacity px-2 mx-n2">
+                                    <a href="" class="d-block mb-0 dropdown-item" style="line-height: 21px;">
+                                        <span class="fw-medium">Grocery Store</span>
+                                        <span class="d-block fs-xs text-body-secondary">Hero slider + Category cards</span>
+                                    </a>
+                                </li>
+                                <li class="hover-effect-opacity px-2 mx-n2">
+                                    <a href="" class="d-block mb-0 dropdown-item" style="line-height: 21px;">
+                                        <span class="fw-medium">Marketplace</span>
+                                        <span class="d-block fs-xs text-body-secondary">Multi-vendor, digital goods</span>
+                                    </a>
+                                </li>
+                                <li class="hover-effect-opacity px-2 mx-n2">
+                                    <a href="" class="d-block mb-0 dropdown-item" style="line-height: 21px;">
+                                        <span class="fw-medium">Single Product Store</span>
+                                        <span class="d-block fs-xs text-body-secondary">Single product / mono brand</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item position-static py-lg-2 me-lg-n1 me-xl-0 dropdown">
+                            <a aria-expanded="false" role="button" class="with-focus nav-link border-0 d-flex justify-content-between" style="padding-left: 1.125rem; padding-right: 1.125rem" tabindex="0" data-bs-toggle="dropdown" aria-expanded="false">
+                                Shop
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                                    <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/>
+                                </svg>
+                            </a>
+                            <div class="rounded-4 p-4 dropdown-menu">
+                                <div class="d-flex flex-column flex-lg-row gap-4">
+                                    <div class="vstack gap-4" style="min-width: 190px;"><div><div class="h6 mb-2">Electronics Store</div>
+                                    <ul class="nav flex-column gap-2 mt-0">
+                                        <li class="d-flex w-100 pt-1">
+                                            <a data-rr-ui-event-key="/shop" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop">Categories Page</a>
+                                        </li>
+                                        <li class="d-flex w-100 pt-1">
+                                            <a data-rr-ui-event-key="/shop/electronics" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link  border-0" href="/shop/electronics">Catalog with Side Filters</a>
+                                        </li>
+                                        <li class="d-flex w-100 pt-1">
+                                            <a class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/electronics/product">Product General Info</a>
+                                        </li>
+                                        <li class="d-flex w-100 pt-1">
+                                            <a data-rr-ui-event-key="/shop/electronics/product?tab=details" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/electronics/product?tab=details">Product Details</a>
+                                        </li>
+                                        <li class="d-flex w-100 pt-1">
+                                            <a class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/electronics/product?tab=reviews">Product Reviews</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <div class="h6 mb-2">Fashion Store</div>
+                                    <ul class="nav flex-column gap-2 mt-0">
+                                        <li class="d-flex w-100 pt-1">
+                                            <a data-rr-ui-event-key="/shop/fashion" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/fashion">Catalog with Side Filters</a></li>
+                                        <li class="d-flex w-100 pt-1">
+                                            <a data-rr-ui-event-key="/shop/fashion/product" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/fashion/product">Product Page</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <div class="h6 mb-2">Furniture Store</div>
+                                    <ul class="nav flex-column gap-2 mt-0">
+                                        <li class="d-flex w-100 pt-1">
+                                            <a data-rr-ui-event-key="/shop/furniture" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/furniture">Catalog with Top Filters</a>
+                                        </li>
+                                        <li class="d-flex w-100 pt-1">
+                                            <a data-rr-ui-event-key="/shop/furniture/product" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/furniture/product">Product Page</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                    </div>
+                                    <div class="vstack gap-4" style="min-width: 190px;">
+                                        <div>
+                                            <div class="h6 mb-2">Grocery Store</div>
+                                            <ul class="nav flex-column gap-2 mt-0">
+                                                <li class="d-flex w-100 pt-1">
+                                                    <a data-rr-ui-event-key="/shop/grocery" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link  border-0" href="/shop/grocery">Catalog with Side Filters</a>
+                                                </li>
+                                                <li class="d-flex w-100 pt-1">
+                                                    <a data-rr-ui-event-key="/shop/grocery/product" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/grocery/product">Product Page</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <div class="h6 mb-2">Marketplace</div>
+                                            <ul class="nav flex-column gap-2 mt-0">
+                                                <li class="d-flex w-100 pt-1">
+                                                    <a data-rr-ui-event-key="/shop/marketplace" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/marketplace">Catalog with Top Filters</a>
+                                                </li>
+                                                <li class="d-flex w-100 pt-1">
+                                                    <a data-rr-ui-event-key="/shop/marketplace/product" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/marketplace/product">Digital Product Page</a>
+                                                </li>
+                                                <li class="d-flex w-100 pt-1">
+                                                    <a data-rr-ui-event-key="/shop/marketplace/checkout" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/marketplace/checkout">Cart / Checkout</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="vstack gap-4" style="min-width: 190px;">
+                                        <div>
+                                            <div class="h6 mb-2">Checkout v.1</div>
+                                            <ul class="nav flex-column gap-2 mt-0">
+                                                <li class="d-flex w-100 pt-1">
+                                                    <a data-rr-ui-event-key="/shop/checkout-v1" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/checkout-v1">Shopping Cart</a>
+                                                </li>
+                                                <li class="d-flex w-100 pt-1">
+                                                    <a data-rr-ui-event-key="/shop/checkout-v1/delivery-1" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/checkout-v1/delivery-1">Delivery Info (Step 1)</a>
+                                                </li>
+                                                <li class="d-flex w-100 pt-1">
+                                                    <a data-rr-ui-event-key="/shop/checkout-v1/delivery-2" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/checkout-v1/delivery-2">Delivery Info (Step 2)</a>
+                                                </li>
+                                                <li class="d-flex w-100 pt-1">
+                                                    <a data-rr-ui-event-key="/shop/checkout-v1/shipping" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/checkout-v1/shipping">Shipping Address</a>
+                                                </li>
+                                                <li class="d-flex w-100 pt-1">
+                                                    <a data-rr-ui-event-key="/shop/checkout-v1/payment" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/checkout-v1/payment">Payment</a>
+                                                </li>
+                                                <li class="d-flex w-100 pt-1">
+                                                    <a data-rr-ui-event-key="/shop/checkout-v1/thank-you" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/checkout-v1/thank-you">Thank You Page</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <div class="h6 mb-2">Checkout v.2</div>
+                                            <ul class="nav flex-column gap-2 mt-0">
+                                                <li class="d-flex w-100 pt-1">
+                                                    <a data-rr-ui-event-key="/shop/checkout-v2" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/checkout-v2">Shopping Cart</a>
+                                                </li>
+                                                <li class="d-flex w-100 pt-1">
+                                                    <a data-rr-ui-event-key="/shop/checkout-v2/delivery" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/checkout-v2/delivery">Delivery Info</a>
+                                                </li>
+                                                <li class="d-flex w-100 pt-1">
+                                                    <a data-rr-ui-event-key="/shop/checkout-v2/pickup" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/checkout-v2/pickup">Pickup from Store</a>
+                                                </li>
+                                                <li class="d-flex w-100 pt-1">
+                                                    <a data-rr-ui-event-key="/shop/checkout-v2/thank-you" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/checkout-v2/thank-you">Thank You Page</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item py-lg-2 me-lg-n1 me-xl-0 dropdown">
+                            <a aria-expanded="false" role="button" class="with-focus nav-link border-0 d-flex justify-content-between"  style="padding-left: 1.125rem; padding-right: 1.125rem" tabindex="0" data-bs-toggle="dropdown" aria-expanded="false">
+                                Account
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                                    <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/>
+                                </svg>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="dropend">
+                                    <a aria-expanded="false" class="with-focus dropdown-item d-flex justify-content-between" role="button" tabindex="0" href="#">
+                                        Auth Pages
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                                            <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="dropend justify-content-between">
+                                    <a aria-expanded="false" class="with-focus dropdown-item d-flex justify-content-between" role="button" tabindex="0" href="#">
+                                        Shop User
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                                            <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item py-lg-2 me-lg-n1 me-xl-0 dropdown">
+                            <a aria-expanded="false" role="button" class="with-focus nav-link border-0 d-flex justify-content-between"  style="padding-left: 1.125rem; padding-right: 1.125rem" tabindex="0" data-bs-toggle="dropdown" aria-expanded="false">
+                                Pages
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                                    <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/>
+                                </svg>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="dropend">
+                                    <a aria-expanded="false" class="with-focus dropdown-item d-flex justify-content-between py-1" role="button" tabindex="0" href="#">
+                                        About
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                                            <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="dropend justify-content-between">
+                                    <a aria-expanded="false" class="with-focus dropdown-item d-flex justify-content-between" role="button" tabindex="0" href="#">
+                                        Blog
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                                            <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="dropend justify-content-between">
+                                    <a aria-expanded="false" class="with-focus dropdown-item d-flex justify-content-between" role="button" tabindex="0" href="#">
+                                        Contact
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                                            <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="dropend justify-content-between">
+                                    <a aria-expanded="false" class="with-focus dropdown-item d-flex justify-content-between" role="button" tabindex="0" href="#">
+                                        Help Center
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                                            <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="dropend justify-content-between">
+                                    <a aria-expanded="false" class="with-focus dropdown-item d-flex justify-content-between" role="button" tabindex="0" href="#">
+                                        404 Error
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                                            <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="dropend justify-content-between">
+                                    <a aria-expanded="false" class="with-focus dropdown-item d-flex justify-content-between" role="button" tabindex="0" href="#">
+                                        Terms & Conditions
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="py-lg-2 me-lg-n1 me-xl-0 nav-item">
+                            <a class="nav-link border-0"  style="padding-left: 1.125rem; padding-right: 1.125rem" href="">Docs</a>
+                        </li>
+                        <li class="py-lg-2 me-lg-n1 me-xl-0 nav-item">
+                            <a class="nav-link border-0"  style="padding-left: 1.125rem; padding-right: 1.125rem" href="">Components</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav border-top px-0 py-3 mt-3 offcanvas-header">
+                    <a class="d-flex justify-content-center w-100 nav-link border-0" href="/account">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                        </svg>
+                        Account
+                    </a>
+                </div>
+            </div>
             <a class="navbar-brand py-1 py-md-2 py-xl-1 d-flex align-items-center" href="/">
                 <span class="d-none d-sm-flex flex-shrink-0 text-primary me-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36">
@@ -40,45 +318,247 @@
                 <p class="brand">Cartzilla</p>
             </a>
             <div id="navbarNav" class="navbar navbar-expand-lg d-none d-lg-block">
-                <ul class="nav justify-content-center">
+                <ul class="nav justify-content-center flex-nowrap">
                     <li class="nav-item">
                         <a class="nav-link dropdown-toggle border-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Home
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#"></a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <ul class="dropdown-menu mt-3" data-bs-popper="static">
+                            <li class="hover-effect-opacity px-2 mx-n2">
+                                <a href="" class="d-block mb-0 dropdown-item" style="line-height: 21px;">
+                                    <span class="fw-medium">Electronics Store</span>
+                                    <span class="d-block fs-xs text-body-secondary">Megamenu + Hero slider</span>
+                                </a>
+                            </li>
+                            <li class="hover-effect-opacity px-2 mx-n2">
+                                <a href="" class="d-block mb-0 dropdown-item" style="line-height: 21px;">
+                                    <span class="fw-medium">Fashion Store v.1</span>
+                                    <span class="d-block fs-xs text-body-secondary">Hero promo slider</span>
+                                </a>
+                            </li>
+                            <li class="hover-effect-opacity px-2 mx-n2">
+                                <a href="" class="d-block mb-0 dropdown-item" style="line-height: 21px;">
+                                    <span class="fw-medium">Fashion Store v.2</span>
+                                    <span class="d-block fs-xs text-body-secondary">Hero banner with hotspots</span>
+                                </a>
+                            </li>
+                            <li class="hover-effect-opacity px-2 mx-n2">
+                                <a href="" class="d-block mb-0 dropdown-item" style="line-height: 21px;">
+                                    <span class="fw-medium">Furniture Store</span>
+                                    <span class="d-block fs-xs text-body-secondary">Fancy product carousel</span>
+                                </a>
+                            </li>
+                            <li class="hover-effect-opacity px-2 mx-n2">
+                                <a href="" class="d-block mb-0 dropdown-item" style="line-height: 21px;">
+                                    <span class="fw-medium">Grocery Store</span>
+                                    <span class="d-block fs-xs text-body-secondary">Hero slider + Category cards</span>
+                                </a>
+                            </li>
+                            <li class="hover-effect-opacity px-2 mx-n2">
+                                <a href="" class="d-block mb-0 dropdown-item" style="line-height: 21px;">
+                                    <span class="fw-medium">Marketplace</span>
+                                    <span class="d-block fs-xs text-body-secondary">Multi-vendor, digital goods</span>
+                                </a>
+                            </li>
+                            <li class="hover-effect-opacity px-2 mx-n2">
+                                <a href="" class="d-block mb-0 dropdown-item" style="line-height: 21px;">
+                                    <span class="fw-medium">Single Product Store</span>
+                                    <span class="d-block fs-xs text-body-secondary">Single product / mono brand</span>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link dropdown-toggle border-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Shop
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
+                        <div class="dropdown-menu p-4 mt-3" data-bs-popper="static">
+                            <div class="d-flex flex-column flex-lg-row gap-4">
+                                <div class="vstack gap-4" style="min-width: 190px;"><div><div class="h6 mb-2">Electronics Store</div>
+                                <ul class="nav flex-column gap-2 mt-0">
+                                    <li class="d-flex w-100 pt-1">
+                                        <a data-rr-ui-event-key="/shop" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop">Categories Page</a>
+                                    </li>
+                                    <li class="d-flex w-100 pt-1">
+                                        <a data-rr-ui-event-key="/shop/electronics" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link  border-0" href="/shop/electronics">Catalog with Side Filters</a>
+                                    </li>
+                                    <li class="d-flex w-100 pt-1">
+                                        <a class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/electronics/product">Product General Info</a>
+                                    </li>
+                                    <li class="d-flex w-100 pt-1">
+                                        <a data-rr-ui-event-key="/shop/electronics/product?tab=details" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/electronics/product?tab=details">Product Details</a>
+                                    </li>
+                                    <li class="d-flex w-100 pt-1">
+                                        <a class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/electronics/product?tab=reviews">Product Reviews</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <div class="h6 mb-2">Fashion Store</div>
+                                <ul class="nav flex-column gap-2 mt-0">
+                                    <li class="d-flex w-100 pt-1">
+                                        <a data-rr-ui-event-key="/shop/fashion" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/fashion">Catalog with Side Filters</a></li>
+                                    <li class="d-flex w-100 pt-1">
+                                        <a data-rr-ui-event-key="/shop/fashion/product" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/fashion/product">Product Page</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <div class="h6 mb-2">Furniture Store</div>
+                                <ul class="nav flex-column gap-2 mt-0">
+                                    <li class="d-flex w-100 pt-1">
+                                        <a data-rr-ui-event-key="/shop/furniture" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/furniture">Catalog with Top Filters</a>
+                                    </li>
+                                    <li class="d-flex w-100 pt-1">
+                                        <a data-rr-ui-event-key="/shop/furniture/product" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/furniture/product">Product Page</a>
+                                    </li>
+                                </ul>
+                            </div>
+                                </div>
+                                <div class="vstack gap-4" style="min-width: 190px;">
+                                    <div>
+                                        <div class="h6 mb-2">Grocery Store</div>
+                                        <ul class="nav flex-column gap-2 mt-0">
+                                            <li class="d-flex w-100 pt-1">
+                                                <a data-rr-ui-event-key="/shop/grocery" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link  border-0" href="/shop/grocery">Catalog with Side Filters</a>
+                                            </li>
+                                            <li class="d-flex w-100 pt-1">
+                                                <a data-rr-ui-event-key="/shop/grocery/product" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/grocery/product">Product Page</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <div class="h6 mb-2">Marketplace</div>
+                                        <ul class="nav flex-column gap-2 mt-0">
+                                            <li class="d-flex w-100 pt-1">
+                                                <a data-rr-ui-event-key="/shop/marketplace" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/marketplace">Catalog with Top Filters</a>
+                                            </li>
+                                            <li class="d-flex w-100 pt-1">
+                                                <a data-rr-ui-event-key="/shop/marketplace/product" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/marketplace/product">Digital Product Page</a>
+                                            </li>
+                                            <li class="d-flex w-100 pt-1">
+                                                <a data-rr-ui-event-key="/shop/marketplace/checkout" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/marketplace/checkout">Cart / Checkout</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="vstack gap-4" style="min-width: 190px;">
+                                    <div>
+                                        <div class="h6 mb-2">Checkout v.1</div>
+                                        <ul class="nav flex-column gap-2 mt-0">
+                                            <li class="d-flex w-100 pt-1">
+                                                <a data-rr-ui-event-key="/shop/checkout-v1" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/checkout-v1">Shopping Cart</a>
+                                            </li>
+                                            <li class="d-flex w-100 pt-1">
+                                                <a data-rr-ui-event-key="/shop/checkout-v1/delivery-1" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/checkout-v1/delivery-1">Delivery Info (Step 1)</a>
+                                            </li>
+                                            <li class="d-flex w-100 pt-1">
+                                                <a data-rr-ui-event-key="/shop/checkout-v1/delivery-2" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/checkout-v1/delivery-2">Delivery Info (Step 2)</a>
+                                            </li>
+                                            <li class="d-flex w-100 pt-1">
+                                                <a data-rr-ui-event-key="/shop/checkout-v1/shipping" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/checkout-v1/shipping">Shipping Address</a>
+                                            </li>
+                                            <li class="d-flex w-100 pt-1">
+                                                <a data-rr-ui-event-key="/shop/checkout-v1/payment" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/checkout-v1/payment">Payment</a>
+                                            </li>
+                                            <li class="d-flex w-100 pt-1">
+                                                <a data-rr-ui-event-key="/shop/checkout-v1/thank-you" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/checkout-v1/thank-you">Thank You Page</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <div class="h6 mb-2">Checkout v.2</div>
+                                        <ul class="nav flex-column gap-2 mt-0">
+                                            <li class="d-flex w-100 pt-1">
+                                                <a data-rr-ui-event-key="/shop/checkout-v2" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/checkout-v2">Shopping Cart</a>
+                                            </li>
+                                            <li class="d-flex w-100 pt-1">
+                                                <a data-rr-ui-event-key="/shop/checkout-v2/delivery" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/checkout-v2/delivery">Delivery Info</a>
+                                            </li>
+                                            <li class="d-flex w-100 pt-1">
+                                                <a data-rr-ui-event-key="/shop/checkout-v2/pickup" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/checkout-v2/pickup">Pickup from Store</a>
+                                            </li>
+                                            <li class="d-flex w-100 pt-1">
+                                                <a data-rr-ui-event-key="/shop/checkout-v2/thank-you" class="animate-underline animate-target d-inline fw-normal text-truncate p-0 nav-link border-0" href="/shop/checkout-v2/thank-you">Thank You Page</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link dropdown-toggle border-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <li class="nav-item position-relative">
+                        <a class="nav-link dropdown-toggle border-0" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Account
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <ul class="dropdown-menu mt-3" data-bs-popper="static">
+                            <li class="dropend">
+                                <a aria-expanded="false" class="with-focus dropdown-item d-flex justify-content-between" role="button" tabindex="0" href="">
+                                    Auth Pages
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+                                        <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="dropend justify-content-between">
+                                <a aria-expanded="false" class="with-focus dropdown-item d-flex justify-content-between" role="button" tabindex="0" href="#">
+                                    Shop User
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+                                        <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
+                                    </svg>
+                                </a>
+                            </li>
                         </ul>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item position-relative">
                         <a class="nav-link dropdown-toggle border-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Pages
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <ul class="dropdown-menu mt-3" data-bs-popper="static">
+                            <li class="dropend">
+                                <a aria-expanded="false" class="with-focus dropdown-item d-flex justify-content-between py-1" role="button" tabindex="0" href="#">
+                                    About
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+                                        <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="dropend justify-content-between">
+                                <a aria-expanded="false" class="with-focus dropdown-item d-flex justify-content-between" role="button" tabindex="0" href="#">
+                                    Blog
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+                                        <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="dropend justify-content-between">
+                                <a aria-expanded="false" class="with-focus dropdown-item d-flex justify-content-between" role="button" tabindex="0" href="#">
+                                    Contact
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+                                        <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="dropend justify-content-between">
+                                <a aria-expanded="false" class="with-focus dropdown-item d-flex justify-content-between" role="button" tabindex="0" href="#">
+                                    Help Center
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+                                        <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="dropend justify-content-between">
+                                <a aria-expanded="false" class="with-focus dropdown-item d-flex justify-content-between" role="button" tabindex="0" href="#">
+                                    404 Error
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+                                        <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="dropend justify-content-between">
+                                <a aria-expanded="false" class="with-focus dropdown-item d-flex justify-content-between" role="button" tabindex="0" href="#">
+                                    Terms &amp; Conditions
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -102,7 +582,7 @@
                       <li><a class="dropdown-item" href="#">Auto</a></li>
                     </ul>
                   </div>
-                <button type="button" aria-label="Toggle search bar" class="btn-icon fs-xl border-0 rounded-circle animate-shake btn btn-lg">
+                <button type="button" aria-label="Toggle search bar" class="btn-icon fs-xl border-0 rounded-circle animate-shake btn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" style="color: #333d4c;" viewBox="0 0 16 16">
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
                       </svg>
@@ -110,9 +590,11 @@
                 <a class="btn btn-lg fs-lg btn-outline-secondary border-0 rounded-circle animate-shake d-none d-md-inline-flex" aria-label="Account" href="">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 448 512"><path d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464l349.5 0c-8.9-63.3-63.3-112-129-112l-91.4 0c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3z"/></svg>
                 </a>
-                <a type="button" aria-label="Shopping cart" class="btn-icon fs-xl position-relative border-0 rounded-circle animate-scale btn btn-lg">
+                <a type="button" aria-label="Shopping cart" class="btn-icon fs-xl position-relative border-0 rounded-circle animate-scale btn">
                     <div class="position-relative">
-                        <img src="./assets/icons/bag-3-svgrepo-com.svg" width="24" height="24" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                            <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                        </svg>
                         <span class="position-absolute top-0 start-100 translate-middle badge bg-danger rounded-pill" 
                             style="font-size: 10px; padding: 1px 4px; min-width: 16px; min-height: 16px;">
                             3
@@ -128,7 +610,7 @@
             <div class="position-relative py-md-3 py-lg-4 py-xl-5 container">
                 <div class="pt-4 pt-sm-5 pb-4 pb-md-5 my-2 mt-sm-0 mb-sm-0 mb-sm-3 mb-md-0 mb-xl-2 mb-xxl-4 row">
                     <div class="pt-xxl-2 col-xl-10">
-                        <h1 class="display-3 mb-md-4" style="font-weight: 700;">High-quanlity design resources tailored for busy creatives</h1>
+                        <h1 class="display-3 mb-4" style="font-weight: 700;">High-quanlity design resources tailored for busy creatives</h1>
                         <p class="fs-lg mb-0" style="font-weight: 400; font-size: 18px;">
                             Discover top-notch 3D and vector illustrations, photos images, designs and mockups.
                         </p>
@@ -248,15 +730,15 @@
                     </button>
                 </div>
             </div>
-            <div class="row row-cols-1 row-cols-sm-2">
-                <div class="col pe-4">
-                    <div class="card">
+            <div class="row row-cols-1 row-cols-sm-2 align-items-stretch">
+                <div class="col h-100">
+                    <div class="card h-100 d-flex flex-column">
                         <img src="./assets/cards/01.webp" class="card-img-top" alt="...">
-                        <div class="card-body p-3">
+                        <div class="card-body p-3 flex-grow-1">
                             <div class="d-flex min-w-0 justify-content-between gap-2 gap-sm-3 mb-2">
                                 <h3 class="nav min-w-0 mb-0">
-                                    <a class="card-title text-truncate p-0 fs-base border-0" href="#">
-                                        <span class="animate-target">Gradient 3D abstract shape illustration</span>
+                                    <a class="card-title p-0 fs-base border-0" href="#">
+                                        <span class="d-block">Gradient 3D abstract shape illustration</span>
                                     </a>
                                 </h3>
                                 <div class="h5 text-nowrap mb-0">$20 </div>
@@ -277,18 +759,18 @@
                         </div>
                       </div>
                 </div>
-                <div class="col d-none d-sm-block">
-                    <div class="card">
+                <div class="col h-100 d-none d-sm-block">
+                    <div class="card h-100 d-flex flex-column">
                         <img src="./assets/cards/02.webp" class="card-img-top" alt="...">
-                        <div class="card-body p-3">
+                        <div class="card-body p-3 flex-grow-1">
                             <div class="d-flex min-w-0 justify-content-between gap-2 gap-sm-3 mb-2">
-                                <h3 class="nav min-w-0 mb-0">
-                                    <a class="card-title p-0 fs-base border-0" href="#">
-                                        <span class="animate-target">Beautiful gaming wallpaper 4K perfect for gaming monitors</span>
-                                    </a>
+                                <h3 class="nav min-w-0 mb-0 flex-grow-1">
+                                  <a class="card-title p-0 fs-base border-0 text-decoration-none d-block" href="#">
+                                    <span class="d-block">Beautiful gaming wallpaper 4K perfect for gaming monitors</span>
+                                  </a>
                                 </h3>
-                                <div class="h5 text-nowrap mb-0">$13 </div>
-                            </div>
+                                <div class="h5 text-nowrap mb-0">$13</div>
+                              </div>                              
                             <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
                                 <div class="nav align-items-center gap-1 fs-xs">
                                     <a class="nav-link fs-xs text-body gap-1 p-0 d-flex align-items-center border-0" href="#">
@@ -308,10 +790,10 @@
             </div>
         </div>
         <div class="pt-2 pt-sm-3 pt-md-4 pt-lg-5 pb-5 my-xxl-3 container">
-            <div class="d-flex s-center justify-content-between gap-4 pb-3 mb-1 mb-sm-2 mb-md-3">
-                <h2 class="h3 mb-0" style="color: rgb(24,29,37)">Explore design recources</h2>
+            <div class="d-flex s-center justify-content-between gap-4 pb-3 mb-1 mb-sm-2 mb-md-3 flex-column flex-md-row">
+                <h2 class="h3 mb-0" style="color: rgb(24,29,37); font-weight: 600;">Explore design recources</h2>
                 <div class="overfow-x auto pb-3">
-                    <ul class="flex-nowrap gap-2 text-nowrap nav nav-pills">
+                    <ul class="flex-nowrap gap-2 text-nowrap nav nav-pills" style="overflow-x: auto; white-space: nowrap;">
                         <li class="me-1 nav-item">
                             <a role="button" data-rr-ui-event-key="bestsellers" class="nav-link active" tabindex="0" href="#">Bestsellers</a>
                         </li>
@@ -338,10 +820,10 @@
                                 <div class="d-flex min-w-0 justify-content-between gap-2 gap-sm-3 mb-2">
                                     <h3 class="nav min-w-0 mb-0">
                                         <a class="card-title p-0 fs-base border-0" href="#">
-                                            <span class="fs-sm text-truncate animate-target">Gradient 3D abstract shape illustration</span>
+                                            <span class="fs-sm text-truncate animate-target">Gradient 3D abstract shape ...</span>
                                         </a>
                                     </h3>
-                                    <div class="h6 text-nowrap mb-0">$13 </div>
+                                    <div class="h6 text-nowrap mb-0 d-none d-lg-block">$13 </div>
                                 </div>
                                 <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
                                     <div class="nav align-items-center gap-1 fs-xs">
@@ -354,7 +836,7 @@
                                         <div class="text-body-secondary">in</div>
                                         <a class="nav-link fs-xs text-body p-0 border-0" href="#">Vectors</a>
                                     </div>
-                                    <div class="fs-xs text-body-secondary">17 sales</div>
+                                    <div class="fs-xs text-body-secondary d-none d-md-block">17 sales</div>
                                 </div>
                             </div>
                         </div>
@@ -376,7 +858,7 @@
                                             <span class="fs-sm text-truncate animate-target">Smart watches series 9 mockup</span>
                                         </a>
                                     </h3>
-                                    <div class="h6 text-nowrap mb-0">$15 </div>
+                                    <div class="h6 text-nowrap mb-0 d-none d-lg-block">$15 </div>
                                 </div>
                                 <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
                                     <div class="nav align-items-center gap-1 fs-xs">
@@ -389,7 +871,7 @@
                                         <div class="text-body-secondary">in</div>
                                         <a class="nav-link fs-xs text-body p-0 border-0" href="#">Mockups</a>
                                     </div>
-                                    <div class="fs-xs text-body-secondary">132 sales</div>
+                                    <div class="fs-xs text-body-secondary d-none d-md-block">132 sales</div>
                                 </div>
                             </div>
                         </div>
@@ -411,7 +893,7 @@
                                             <span class="fs-sm text-truncate animate-target">A collection of colorful items</span>
                                         </a>
                                     </h3>
-                                    <div class="h6 text-nowrap mb-0">$21 </div>
+                                    <div class="h6 text-nowrap mb-0 d-none d-lg-block">$21 </div>
                                 </div>
                                 <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
                                     <div class="nav align-items-center gap-1 fs-xs">
@@ -424,7 +906,7 @@
                                         <div class="text-body-secondary">in</div>
                                         <a class="nav-link fs-xs text-body p-0 border-0" href="#">3D illustration</a>
                                     </div>
-                                    <div class="fs-xs text-body-secondary">78 sales</div>
+                                    <div class="fs-xs text-body-secondary d-none d-md-block">78 sales</div>
                                 </div>
                             </div>
                         </div>
@@ -446,7 +928,7 @@
                                             <span class="fs-sm text-truncate animate-target">Multi device mockup PSD</span>
                                         </a>
                                     </h3>
-                                    <div class="h6 text-nowrap mb-0">$27 </div>
+                                    <div class="h6 text-nowrap mb-0 d-none d-lg-block">$27 </div>
                                 </div>
                                 <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
                                     <div class="nav align-items-center gap-1 fs-xs">
@@ -459,7 +941,7 @@
                                         <div class="text-body-secondary">in</div>
                                         <a class="nav-link fs-xs text-body p-0 border-0" href="#">Mockups</a>
                                     </div>
-                                    <div class="fs-xs text-body-secondary">43 sales</div>
+                                    <div class="fs-xs text-body-secondary d-none d-md-block">43 sales</div>
                                 </div>
                             </div>
                         </div>
@@ -481,7 +963,7 @@
                                             <span class="fs-sm text-truncate animate-target">Gradient UI/UX landing page</span>
                                         </a>
                                     </h3>
-                                    <div class="h6 text-nowrap mb-0">$30</div>
+                                    <div class="h6 text-nowrap mb-0 d-none d-lg-block">$30</div>
                                 </div>
                                 <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
                                     <div class="nav align-items-center gap-1 fs-xs">
@@ -494,7 +976,7 @@
                                         <div class="text-body-secondary">in</div>
                                         <a class="nav-link fs-xs text-body p-0 border-0" href="#">Templates</a>
                                     </div>
-                                    <div class="fs-xs text-body-secondary">247 sales</div>
+                                    <div class="fs-xs text-body-secondary d-none d-md-block">247 sales</div>
                                 </div>
                             </div>
                         </div>
@@ -516,7 +998,7 @@
                                             <span class="fs-sm text-truncate animate-target">3D box mockup bold rebrand</span>
                                         </a>
                                     </h3>
-                                    <div class="h6 text-nowrap mb-0">$16</div>
+                                    <div class="h6 text-nowrap mb-0 d-none d-lg-block">$16</div>
                                 </div>
                                 <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
                                     <div class="nav align-items-center gap-1 fs-xs">
@@ -529,7 +1011,7 @@
                                         <div class="text-body-secondary">in</div>
                                         <a class="nav-link fs-xs text-body p-0 border-0" href="#">Mockups</a>
                                     </div>
-                                    <div class="fs-xs text-body-secondary">56 sales</div>
+                                    <div class="fs-xs text-body-secondary d-none d-md-block">56 sales</div>
                                 </div>
                             </div>
                         </div>
@@ -548,10 +1030,10 @@
                                 <div class="d-flex min-w-0 justify-content-between gap-2 gap-sm-3 mb-2">
                                     <h3 class="nav min-w-0 mb-0">
                                         <a class="card-title p-0 fs-base border-0" href="#">
-                                            <span class="fs-sm text-truncate animate-target">Beautiful gaming wallpaper 4K perfect for gaming monitors</span>
+                                            <span class="fs-sm text-truncate animate-target">Beautiful gaming wallpaper 4K ...</span>
                                         </a>
                                     </h3>
-                                    <div class="h6 text-nowrap mb-0">$13 </div>
+                                    <div class="h6 text-nowrap mb-0 d-none d-lg-block">$13 </div>
                                 </div>
                                 <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
                                     <div class="nav align-items-center gap-1 fs-xs">
@@ -564,7 +1046,7 @@
                                         <div class="text-body-secondary">in</div>
                                         <a class="nav-link fs-xs text-body p-0 border-0" href="#">Vectors</a>
                                     </div>
-                                    <div class="fs-xs text-body-secondary">17 sales</div>
+                                    <div class="fs-xs text-body-secondary d-none d-md-block">17 sales</div>
                                 </div>
                             </div>
                         </div>
@@ -583,10 +1065,10 @@
                                 <div class="d-flex min-w-0 justify-content-between gap-2 gap-sm-3 mb-2">
                                     <h3 class="nav min-w-0 mb-0">
                                         <a class="card-title p-0 fs-base border-0" href="#">
-                                            <span class="fs-sm text-truncate animate-target">Beautiful gaming wallpaper 4K perfect for gaming monitors</span>
+                                            <span class="fs-sm text-truncate animate-target">Beautiful gaming wallpaper 4K ...</span>
                                         </a>
                                     </h3>
-                                    <div class="h6 text-nowrap mb-0">$13 </div>
+                                    <div class="h6 text-nowrap mb-0 d-none d-lg-block">$13 </div>
                                 </div>
                                 <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
                                     <div class="nav align-items-center gap-1 fs-xs">
@@ -599,7 +1081,7 @@
                                         <div class="text-body-secondary">in</div>
                                         <a class="nav-link fs-xs text-body p-0 border-0" href="#">Vectors</a>
                                     </div>
-                                    <div class="fs-xs text-body-secondary">17 sales</div>
+                                    <div class="fs-xs text-body-secondary d-none d-md-block">17 sales</div>
                                 </div>
                             </div>
                         </div>
@@ -634,11 +1116,11 @@
                         </div>
                         <div class="d-flex min-w-0 justify-content-between gap-2 gap-sm-3 pt-3 align-items-center">
                             <h3 class="nav min-w-0 mb-0">
-                                <a class="nav-link p-0 border-0" href="">
+                                <a class="nav-link p-0 border-0 pb-md-2" href="">
                                     <span class="text-truncate animate-target fs-base">Vectors</span>
                                 </a>
                             </h3>
-                            <button type="button" class="btn btn-sm btn-icon btn-secondary bg-transparent border-0 rounded-0 animate-pulse position-relative z-3" aria-label="Add to Wishlist">
+                            <button type="button" class="btn btn-sm btn-icon btn-secondary bg-transparent border-0 rounded-0 animate-pulse position-relative z-3 d-none d-lg-block" aria-label="Add to Wishlist">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" style="color: #333d4c;" viewBox="0 0 16 16">
                                     <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
                                 </svg>
@@ -662,11 +1144,11 @@
                         </div>
                         <div class="d-flex min-w-0 justify-content-between gap-2 gap-sm-3 pt-3 align-items-center">
                             <h3 class="nav min-w-0 mb-0">
-                                <a class="nav-link p-0 border-0" href="">
+                                <a class="nav-link p-0 border-0 pb-md-2" href="">
                                     <span class="text-truncate animate-target fs-base">Glass effect</span>
                                 </a>
                             </h3>
-                            <button type="button" class="btn btn-sm btn-icon btn-secondary bg-transparent border-0 rounded-0 animate-pulse position-relative z-3" aria-label="Add to Wishlist">
+                            <button type="button" class="btn btn-sm btn-icon btn-secondary bg-transparent border-0 rounded-0 animate-pulse position-relative z-3 d-none d-lg-block" aria-label="Add to Wishlist">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" style="color: #333d4c;" viewBox="0 0 16 16">
                                     <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
                                 </svg>
@@ -690,11 +1172,11 @@
                         </div>
                         <div class="d-flex min-w-0 justify-content-between gap-2 gap-sm-3 pt-3 align-items-center">
                             <h3 class="nav min-w-0 mb-0">
-                                <a class="nav-link p-0 border-0" href="">
+                                <a class="nav-link p-0 border-0 pb-md-2" href="">
                                     <span class="text-truncate animate-target fs-base">Devices mockups</span>
                                 </a>
                             </h3>
-                            <button type="button" class="btn btn-sm btn-icon btn-secondary bg-transparent border-0 rounded-0 animate-pulse position-relative z-3" aria-label="Add to Wishlist">
+                            <button type="button" class="btn btn-sm btn-icon btn-secondary bg-transparent border-0 rounded-0 animate-pulse position-relative z-3 d-none d-lg-block" aria-label="Add to Wishlist">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" style="color: #333d4c;" viewBox="0 0 16 16">
                                     <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
                                 </svg>
@@ -718,11 +1200,11 @@
                         </div>
                         <div class="d-flex min-w-0 justify-content-between gap-2 gap-sm-3 pt-3 align-items-center">
                             <h3 class="nav min-w-0 mb-0">
-                                <a class="nav-link p-0 border-0" href="">
+                                <a class="nav-link p-0 border-0 pb-md-2" href="">
                                     <span class="text-truncate animate-target fs-base">Mockup recources</span>
                                 </a>
                             </h3>
-                            <button type="button" class="btn btn-sm btn-icon btn-secondary bg-transparent border-0 rounded-0 animate-pulse position-relative z-3" aria-label="Add to Wishlist">
+                            <button type="button" class="btn btn-sm btn-icon btn-secondary bg-transparent border-0 rounded-0 animate-pulse position-relative z-3 d-none d-lg-block" aria-label="Add to Wishlist">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" style="color: #333d4c;" viewBox="0 0 16 16">
                                     <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
                                 </svg>
